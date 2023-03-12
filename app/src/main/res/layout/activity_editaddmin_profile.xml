@@ -14,14 +14,15 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-        <ImageButton
-            android:id="@+id/btn_back"
+        <ImageView
+            android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:background="@android:color/transparent"
-            android:padding="12dp"
-            android:src="@drawable/ic_back" />
+            android:layout_height="match_parent"
+            android:src="@drawable/vancar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
     </androidx.appcompat.widget.Toolbar>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
             android:textSize="25sp"/>
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/pfName">
             <TextView
                 android:id="@+id/icEmail"
@@ -176,17 +177,15 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/icEye"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/bottomnav_shap"
                 android:backgroundTint="#6EC6F3"
-                android:fontFamily="@font/kanit_light"
+                android:fontFamily="@font/kanit_medium"
                 android:text="บันทึก"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
-
-
         </RelativeLayout>
         <!--    <androidx.appcompat.widget.AppCompatButton-->
         <!--        android:id="@+id/btn_editPf"-->
@@ -201,17 +200,17 @@
         <!--        android:layout_marginTop="100dp"-->
         <!--        android:textAllCaps="false"-->
         <!--        android:textSize="20sp"/>-->
-        <FrameLayout
-            android:id="@+id/framelayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="-6dp" />
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomnavigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:menu="@menu/bottom_menuadmin"/>
-    </RelativeLayout>
 
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomnavigation"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_menuadmin"/>
 </RelativeLayout>

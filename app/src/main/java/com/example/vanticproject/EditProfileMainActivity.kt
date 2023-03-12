@@ -2,6 +2,8 @@ package com.example.vanticproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
+import androidx.appcompat.widget.Toolbar
 import com.example.vanticproject.databinding.ActivityEditProfileMainBinding
 import com.example.vanticproject.databinding.ActivityProfileMainBinding
 
@@ -12,6 +14,13 @@ class EditProfileMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingProfile = ActivityEditProfileMainBinding.inflate(layoutInflater)
         setContentView(bindingProfile.root)
+
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener { onBackPressed() }
+
         session = SessionManager(applicationContext)
 
         val fname: String? = session.pref.getString(SessionManager.KEY_FNAME, null)

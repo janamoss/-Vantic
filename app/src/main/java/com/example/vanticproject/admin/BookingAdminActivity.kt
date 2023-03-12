@@ -2,7 +2,9 @@ package com.example.vanticproject.admin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vanticproject.*
@@ -27,6 +29,12 @@ class BookingAdminActivity : AppCompatActivity() {
             DividerItemDecoration(bindingbookA.recyclerview.getContext(),
                 DividerItemDecoration.VERTICAL)
         )
+
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener { onBackPressed() }
 
     }
 

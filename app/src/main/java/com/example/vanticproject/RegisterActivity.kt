@@ -4,7 +4,9 @@ import User
 import VanticAPI
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.example.vanticproject.databinding.ActivityRegisterBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,6 +19,13 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingRegister = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(bindingRegister.root)
+
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener { onBackPressed() }
+
         bindingRegister.btnSubmitRegister.setOnClickListener{
             insertUser()
         }

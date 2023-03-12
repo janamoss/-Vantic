@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.example.vanticproject.R
 import com.example.vanticproject.SessionManager
 import com.example.vanticproject.Van
@@ -42,6 +44,11 @@ class EditVanActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, VanAdminActivity::class.java)
             startActivity(intent)
         }
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener { onBackPressed() }
 
     }
 

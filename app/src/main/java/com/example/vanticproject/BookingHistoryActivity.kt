@@ -23,7 +23,6 @@ class BookingHistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingHistory = ActivityBookingHistoryBinding.inflate(layoutInflater)
         setContentView(bindingHistory.root)
-        session = SessionManager(applicationContext)
 
         bindingHistory.recyclerview.adapter = HistoryAdapter(this.bookinghistorylist, applicationContext)
         bindingHistory.recyclerview.layoutManager = LinearLayoutManager(applicationContext)

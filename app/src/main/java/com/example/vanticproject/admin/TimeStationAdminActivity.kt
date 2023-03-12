@@ -4,7 +4,9 @@ import VanticAPI
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vanticproject.*
@@ -34,6 +36,11 @@ class TimeStationAdminActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, AddTimeStationActivity::class.java)
             startActivity(intent)
         }
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener { onBackPressed() }
     }
     override fun onResume() {
         super.onResume()

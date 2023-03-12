@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.example.vanticproject.*
 import com.example.vanticproject.databinding.ActivityBookingAdminBinding
 import com.example.vanticproject.databinding.ActivityEditBookingAdminBinding
@@ -66,6 +68,11 @@ class EditBookingAdminActivity : AppCompatActivity() {
         binding.btnDelete.setOnClickListener {
             deletebooking()
         }
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener { onBackPressed() }
     }
 
     fun getStatus(onSuccess: (List<Status>) -> Unit, onFailure: (Throwable) -> Unit) {

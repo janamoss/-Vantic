@@ -32,7 +32,7 @@
         android:layout_marginTop="50dp">
     <TextView
         android:id="@+id/title_book"
-        android:fontFamily="@font/kanit_light"
+        android:fontFamily="@font/kanit_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

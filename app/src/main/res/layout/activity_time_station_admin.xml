@@ -34,6 +34,7 @@
       android:layout_height="wrap_content"
       android:fontFamily="@font/kanti"
       android:textFontWeight="400"
+      android:textColor="@color/black"
       android:text="เที่ยวรถทั้งหมด"
       android:textSize="35sp"
       android:layout_centerHorizontal="true"/>

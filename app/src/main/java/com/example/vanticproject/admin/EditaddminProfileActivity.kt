@@ -6,10 +6,10 @@ import android.widget.ImageButton
 import androidx.appcompat.widget.Toolbar
 import com.example.vanticproject.R
 
-class TimeStationDetailActivity : AppCompatActivity() {
+class EditaddminProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_time_station_detail)
+        setContentView(R.layout.activity_editaddmin_profile)
 
         val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
         setSupportActionBar(toolbar)

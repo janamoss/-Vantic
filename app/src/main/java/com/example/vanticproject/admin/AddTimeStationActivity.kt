@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.example.lab4u1.TimePickerFragment
 import com.example.lab4u1.TimePickerFrangmentEnd
 import com.example.vanticproject.*
@@ -27,6 +29,11 @@ class AddTimeStationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingaddTimeStation = ActivityAddTimeStationBinding.inflate(layoutInflater)
         setContentView(bindingaddTimeStation.root)
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener { onBackPressed() }
         showDropdownstart()
         showDropdownend()
         showDropdownvan()

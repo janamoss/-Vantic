@@ -3,7 +3,10 @@ package com.example.vanticproject.admin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
+import androidx.appcompat.widget.Toolbar
 import com.example.vanticproject.ProfileMainActivity
+import com.example.vanticproject.R
 import com.example.vanticproject.SessionManager
 import com.example.vanticproject.databinding.ActivityHomeAdminBinding
 
@@ -43,5 +46,10 @@ class HomeAdminActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, BookingAdminActivity::class.java)
             startActivity(intent)
         }
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        setSupportActionBar(toolbar)
+
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        btnBack.setOnClickListener { onBackPressed() }
     }
 }
