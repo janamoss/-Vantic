@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="8dp"
+        android:outlineAmbientShadowColor="@color/black">
+        <TextView
+            android:id="@+id/txt_time"
+            android:fontFamily="@font/kanit_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="31 มกราคม 2566"
+            android:textColor="#3AB4F2"
+            android:textSize="20sp"
+            android:padding="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/txt_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/kanit_medium"
+                android:padding="10dp"
+                android:text="รายการที่ 1"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/status_car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/kanit_medium"
+                android:padding="10dp"
+                android:text="รถยังไม่ออกเดินทาง"
+                android:textAlignment="textEnd"
+                android:textColor="#3AB4F2"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/kanit_light"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="มอสซี่ ขยี้หัวใจ"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_tell"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/kanit_light"
+                android:paddingLeft="10dp"
+                android:paddingTop="30dp"
+                android:text="เบอร์โทร"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_trip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/kanit_light"
+                android:paddingLeft="10dp"
+                android:paddingTop="30dp"
+                android:text="เที่ยวจาก"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txt_bath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="85dp"
+                android:fontFamily="@font/kanit_light"
+                android:paddingLeft="10dp"
+                android:paddingTop="30dp"
+                android:text="$480.00"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_detailmore"
+                android:layout_width="137dp"
+                android:layout_height="36dp"
+                android:layout_marginHorizontal="220dp"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/bottom_bc"
+                android:fontFamily="@font/kanit_medium"
+                android:text="ดูเพิ่มเติม"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

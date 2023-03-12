@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".admin.HomeAdminActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/vantic"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/vancar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="For Admin"
+            android:layout_marginTop="15dp"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/kanti"
+        android:textFontWeight="400"
+        android:text="ยินดีต้อนรับ"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        android:textSize="30sp"/>
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/baseline_account_circle_24"
+        />
+    <TextView
+        android:id="@+id/nameaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kanti"
+        android:textFontWeight="400"
+        android:layout_centerHorizontal="true"
+        android:text="Kimmie Admin"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        android:textSize="20sp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/icon"
+        />
+
+    <Button
+        android:id="@+id/Timetable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameaccount"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_button"
+        android:drawableTop="@drawable/map"
+        android:elevation="20dp"
+        android:text="เที่ยวรถทั้งหมด"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/allvan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Timetable"
+        android:background="@drawable/custom_button"
+        android:elevation="20dp"
+        android:layout_margin="10dp"
+        android:drawableTop="@drawable/van"
+        android:text="รถตู้ทั้งหมด"
+        android:textSize="18sp"
+        />
+    <Button
+        android:id="@+id/allbooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allvan"
+        android:background="@drawable/custom_button"
+        android:elevation="20dp"
+        android:layout_margin="10dp"
+        android:drawableTop="@drawable/calendar"
+        android:text="การจองทั้งหมด"
+        android:textSize="18sp"
+        />
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomnavigation"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_menuadmin"/>
+</RelativeLayout>

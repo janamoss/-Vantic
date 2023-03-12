@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".admin.EditBookingAdminActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/vantic"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/transparent"
+            android:padding="12dp"
+            android:src="@drawable/ic_back"/>
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+
+    <TextView
+        android:id="@+id/title_book"
+        android:fontFamily="@font/kanit_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="การจองทั้งหมด"
+        android:textSize="30sp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/title_book"
+        android:layout_margin="10dp"
+
+        app:cardCornerRadius="4dp"
+        android:outlineAmbientShadowColor="@color/black">
+        <TextView
+            android:id="@+id/txt_id"
+            android:fontFamily="@font/kanit_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="รายการที่ "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:padding="10dp"/>
+        <TextView
+            android:id="@+id/txt_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kanit_light"
+            android:layout_below="@id/txt_id"
+            android:text="ชื่อ"
+            android:textColor="@color/black"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/driver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kanit_light"
+            android:layout_below="@id/txt_user"
+            android:text="เบอร์โทร : "
+            android:textColor="@color/black"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="30dp"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:id="@+id/txt_from"
+            android:fontFamily="@font/kanit_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/driver"
+            android:text="เที่ยวจาก"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="63dp"
+            android:paddingTop="30dp"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/txtvanid"
+            android:fontFamily="@font/kanit_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_from"
+            android:text="รถตู้คันที่"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="90dp"
+            android:paddingTop="30dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/txtdeparturetime"
+            android:fontFamily="@font/kanit_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtvanid"
+            android:text="เวลารถออก :"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="116dp"
+            android:paddingTop="30dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/txtarrivetime"
+            android:fontFamily="@font/kanit_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtdeparturetime"
+            android:text="เวลาถึงที่หมาย :"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="143dp"
+            android:paddingTop="30dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/txt_amount"
+            android:fontFamily="@font/kanit_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtarrivetime"
+            android:text="จำนวนที่นั่งที่จอง :"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="169dp"
+            android:paddingTop="30dp"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/txt_price"
+            android:fontFamily="@font/kanit_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_amount"
+            android:text="ราคารวม"
+            android:textColor="@color/black"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="195dp"
+            android:paddingTop="30dp"
+            android:textSize="18sp" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:fontFamily="@font/kanit_light"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="257dp">
+            <AutoCompleteTextView
+                android:id="@+id/selectedFrom"
+                android:fontFamily="@font/kanit_light"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="สถานะ"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btn_edit"
+            android:fontFamily="@font/kanit_medium"
+            android:backgroundTint="#33D744"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="200dp"
+            android:text="ยืนยัน"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            />
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="80dp"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="288dp"
+            android:backgroundTint="#FAA4A4"
+            android:fontFamily="@font/kanit_medium"
+            android:text="ลบ"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"/>
+    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottomnavigation"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomnavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_menuadmin" />
+
+</RelativeLayout>

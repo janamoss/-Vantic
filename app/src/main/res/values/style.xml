@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="vanticInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/vantic</item>
+        <item name="endIconTint">@color/vantic</item>
+        <item name="hintTextColor">@color/vantic</item>
+        <item name="startIconTint">@color/vantic</item>
+    </style>
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/Nostring"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VanticProject"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".EditProfileMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.EditBookingAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookingReserveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.TimeStationDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HowtoBuyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuyTicketVanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookingDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookingHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowTimeStationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.BookingAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContactUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SusccessBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.TimeStationAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.VanAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AddTimeStationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.EditTimeStationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.AddVanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.EditVanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.HomeAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

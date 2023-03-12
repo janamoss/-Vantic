@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+<item  android:id="@+id/nav_home"
+    android:title="หน้าหลัก"
+    android:icon="@drawable/baseline_home_24"/>
+    <item  android:id="@+id/nav_booking"
+        android:title="จองตั๋วรถตู้"
+        android:icon="@drawable/ic_24"/>
+    <item  android:id="@+id/nav_history"
+        android:title="ประวัติการจอง"
+        android:icon="@drawable/ic_his"/>
+    <item  android:id="@+id/nav_contact"
+        android:title="ติดต่อเรา"
+        android:icon="@drawable/ic_phone"/>
+    <item  android:id="@+id/nav_recommend"
+        android:title="แนะนำ"
+        android:icon="@drawable/ic_quiz"/>
+
+</menu>

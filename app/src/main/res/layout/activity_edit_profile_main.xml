@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileMainActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/vantic"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <ImageView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/vancar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_toolbar"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/pfName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/account"
+            android:paddingLeft="25dp"
+            android:text="โปรไฟล์"
+            android:gravity="center"
+            android:textSize="25sp"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pfName">
+            <TextView
+                android:id="@+id/icEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/email"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="40dp" />
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Email"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/icEmail"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+            <View
+                android:layout_below="@id/icEmail"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+            <TextView
+                android:id="@+id/icAcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/rename"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_below="@id/icEmail"/>
+            <EditText
+                android:id="@+id/txtFName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/icAcc"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/icEmail"/>
+            <View
+                android:layout_below="@id/icAcc"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+            <TextView
+                android:id="@+id/icLna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/rename"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_below="@id/icAcc"/>
+            <EditText
+                android:id="@+id/txtLName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/icLna"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/icAcc"/>
+            <View
+                android:layout_below="@id/icLna"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+            <TextView
+                android:id="@+id/icCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/calling"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_below="@id/icLna"/>
+            <EditText
+                android:id="@+id/txtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Numeber"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/icCall"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/icLna"/>
+            <View
+                android:layout_below="@id/icCall"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+            <TextView
+                android:id="@+id/icEye"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/remove_eye"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_below="@id/icCall"/>
+            <EditText
+                android:id="@+id/txtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:layout_toRightOf="@id/icEye"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/icCall"/>
+            <View
+                android:layout_below="@id/icEye"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save"
+                android:fontFamily="@font/kanit_light"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:backgroundTint="#6EC6F3"
+                android:text="บันทึก"
+                android:layout_below="@id/icEye"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bottomnav_shap"
+                android:layout_marginTop="50dp"
+                android:textAllCaps="false"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+        <!--    <androidx.appcompat.widget.AppCompatButton-->
+        <!--        android:id="@+id/btn_editPf"-->
+        <!--        android:fontFamily="@font/kanit_light"-->
+        <!--        android:layout_width="300dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_gravity="center"-->
+        <!--        android:textColor="@color/white"-->
+        <!--        android:backgroundTint="#6EC6F3"-->
+        <!--        android:text="แก้ไขโปรไฟล์"-->
+        <!--        android:background="@drawable/buttom_or_input"-->
+        <!--        android:layout_marginTop="100dp"-->
+        <!--        android:textAllCaps="false"-->
+        <!--        android:textSize="20sp"/>-->
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottomnavigation"/>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomnavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_menu"/>
+    </RelativeLayout>
+
+</RelativeLayout>
