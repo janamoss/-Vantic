@@ -1,6 +1,7 @@
 package com.example.vanticproject.admin
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -73,6 +74,24 @@ class EditBookingAdminActivity : AppCompatActivity() {
 
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
         btnBack.setOnClickListener { onBackPressed() }
+
+        binding.bottomnavigation.setOnItemSelectedListener{
+            when (it.itemId) {
+                R.id.nav_times -> {
+                    val intent = Intent(this, TimeStationAdminActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_allcar -> {
+                    val intent = Intent(this, VanAdminActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_allbooking -> {
+                    val intent = Intent(this, BookingAdminActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
     }
 
     fun getStatus(onSuccess: (List<Status>) -> Unit, onFailure: (Throwable) -> Unit) {

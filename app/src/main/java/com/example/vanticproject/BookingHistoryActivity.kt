@@ -37,6 +37,24 @@ class BookingHistoryActivity : AppCompatActivity() {
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
         btnBack.setOnClickListener { onBackPressed() }
 
+        bindingHistory.bottomnavigation.setOnItemSelectedListener{
+            when (it.itemId) {
+                R.id.nav_booking -> {
+                    val intent = Intent(this, BuyTicketVanActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_history -> {
+                    val intent = Intent(this, BookingHistoryActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_profile -> {
+                    val intent = Intent(this, ProfileMainActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+
     }
     override fun onResume() {
         super.onResume()

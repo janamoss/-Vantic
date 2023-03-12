@@ -1,5 +1,6 @@
 package com.example.vanticproject.admin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -35,6 +36,24 @@ class BookingAdminActivity : AppCompatActivity() {
 
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
         btnBack.setOnClickListener { onBackPressed() }
+
+        bindingbookA.bottomnavigation.setOnItemSelectedListener{
+            when (it.itemId) {
+                R.id.nav_times -> {
+                    val intent = Intent(this, TimeStationAdminActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_allcar -> {
+                    val intent = Intent(this, VanAdminActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_allbooking -> {
+                    val intent = Intent(this, BookingAdminActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 
     }
 

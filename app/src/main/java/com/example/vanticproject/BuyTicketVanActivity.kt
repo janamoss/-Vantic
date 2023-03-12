@@ -39,6 +39,24 @@ class BuyTicketVanActivity : AppCompatActivity() {
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
         btnBack.setOnClickListener { onBackPressed() }
 
+        bindingbuy.bottomnavigation.setOnItemSelectedListener{
+            when (it.itemId) {
+                R.id.nav_booking -> {
+                    val intent = Intent(this, BuyTicketVanActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_history -> {
+                    val intent = Intent(this, BookingHistoryActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_profile -> {
+                    val intent = Intent(this, ProfileMainActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+
     }
     private fun showDropdown () {
         bindingbuy.dropdownSeat.setText("กรุณาเลือกที่นั่ง")

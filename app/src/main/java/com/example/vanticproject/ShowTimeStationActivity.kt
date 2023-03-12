@@ -1,6 +1,7 @@
 package com.example.vanticproject
 
 import VanticAPI
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -31,6 +32,24 @@ class ShowTimeStationActivity : AppCompatActivity() {
 
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
         btnBack.setOnClickListener { onBackPressed() }
+
+        bindingshowtime.bottomnavigation.setOnItemSelectedListener{
+            when (it.itemId) {
+                R.id.nav_booking -> {
+                    val intent = Intent(this, BuyTicketVanActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_history -> {
+                    val intent = Intent(this, BookingHistoryActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_profile -> {
+                    val intent = Intent(this, ProfileMainActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 
         var data = intent
         var seat_user = data.getIntExtra("seats",0)

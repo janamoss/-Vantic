@@ -51,5 +51,25 @@ class HomeAdminActivity : AppCompatActivity() {
 
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
         btnBack.setOnClickListener { onBackPressed() }
+
+
+        bindingHomeA.bottomnavigation.setOnItemSelectedListener{
+            when (it.itemId) {
+                R.id.nav_times -> {
+                    val intent = Intent(this, TimeStationAdminActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_allcar -> {
+                    val intent = Intent(this, VanAdminActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_allbooking -> {
+                    val intent = Intent(this, BookingAdminActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
+
     }
 }

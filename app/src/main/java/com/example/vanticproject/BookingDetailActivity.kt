@@ -1,5 +1,6 @@
 package com.example.vanticproject
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,6 +27,24 @@ class BookingDetailActivity : AppCompatActivity() {
 
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
         btnBack.setOnClickListener { onBackPressed() }
+
+        bindingDetail.bottomnavigation.setOnItemSelectedListener{
+            when (it.itemId) {
+                R.id.nav_booking -> {
+                    val intent = Intent(this, BuyTicketVanActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_history -> {
+                    val intent = Intent(this, BookingHistoryActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_profile -> {
+                    val intent = Intent(this, ProfileMainActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 
         var data = intent
         var dates = data.getStringExtra("date").toString()
