@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+
         app:cardCornerRadius="8dp"
         android:outlineAmbientShadowColor="@color/black">
         <TextView
@@ -24,6 +25,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="207dp"
+
             android:layout_marginTop="50dp">
 
             <TextView
@@ -79,7 +81,7 @@
                 android:fontFamily="@font/kanit_light"
                 android:paddingLeft="10dp"
                 android:paddingTop="30dp"
-                android:text="เที่ยวจาก"
+                android:text="เที่ยวจากfdbfzdbfsbdzbbzdbbd"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
@@ -94,12 +96,25 @@
                 android:text="$480.00"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
+
+
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_canceled"
                 android:layout_width="137dp"
                 android:layout_height="36dp"
-                android:layout_marginHorizontal="220dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/cancel_bottom"
                 android:fontFamily="@font/kanit_medium"
                 android:text="ยกเลิกการจอง"
@@ -110,13 +125,14 @@
                 android:id="@+id/btn_detailmore"
                 android:layout_width="137dp"
                 android:layout_height="36dp"
-                android:layout_marginHorizontal="220dp"
-                android:layout_marginTop="150dp"
+                android:layout_marginHorizontal="190dp"
+                android:layout_marginTop="200dp"
                 android:background="@drawable/bottom_bc"
                 android:fontFamily="@font/kanit_medium"
                 android:text="ดูเพิ่มเติม"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
