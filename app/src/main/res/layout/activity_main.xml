@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundcarvantic"
     tools:context=".MainActivity">
 
     <RelativeLayout
+        android:id="@+id/login"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#75F6F6F6">
-
+        android:layout_height="wrap_content"
+        android:background="@color/white">
         <ImageView
             android:id="@+id/imgVan"
             android:layout_width="150dp"
@@ -19,104 +18,105 @@
             android:layout_marginTop="20dp"
             android:src="@drawable/vanticcar"
             android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:id="@+id/txtLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="เข้าสู่ระบบ"
-            android:textSize="45sp"
-            android:textColor="#ffffff"
-            android:fontFamily="@font/kanti"
-            android:layout_below="@id/imgVan"
-            android:textFontWeight="700"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputEmail"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            style="@style/vanticInput"
-            android:hint="อีเมล"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/txtLogin"
-            android:layout_marginTop="40dp"
-            app:boxCornerRadiusBottomEnd="31.5dp"
-            app:boxCornerRadiusBottomStart="31.5dp"
-            app:boxCornerRadiusTopEnd="31.5dp"
-            app:boxCornerRadiusTopStart="31.5dp"
-            app:boxStrokeWidth="0dp"
-            app:boxBackgroundColor="#F5F4F2">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtEmail"
-                android:fontFamily="@font/kanti"
-                android:textFontWeight="400"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputPassword"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            style="@style/vanticInput"
-            android:hint="รหัสผ่าน"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/inputEmail"
-            android:layout_marginTop="40dp"
-            app:boxCornerRadiusBottomEnd="31.5dp"
-            app:boxCornerRadiusBottomStart="31.5dp"
-            app:boxCornerRadiusTopEnd="31.5dp"
-            app:boxCornerRadiusTopStart="31.5dp"
-            app:boxStrokeWidth="0dp"
-            app:boxBackgroundColor="#F5F4F2">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtPassword"
-                android:fontFamily="@font/kanti"
-                android:textFontWeight="400"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnLogin"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/kanti"
-            android:textFontWeight="700"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="#241C1C"
-            android:background="@drawable/buttom_main"
-            android:layout_centerInParent="true"
-            android:text="เข้าสู่ระบบ"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:padding="20dp"
-            android:layout_below="@id/inputPassword" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnRegister"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/kanti"
-            android:textFontWeight="700"
-            android:textColor="@color/white"
-            android:backgroundTint="#3AB4F2"
-            android:background="@drawable/buttom_main"
-            android:text="ลงทะเบียน"
-            android:textSize="20sp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
-            android:padding="20dp"
-            android:layout_below="@id/btnLogin" />
     </RelativeLayout>
-</ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bottom_login"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/login">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="เข้าสู่ระบบ"
+            android:textSize="35sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:fontFamily="@font/kanit_medium"/>
+
+    </RelativeLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputEmail"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        style="@style/vanticInput"
+        android:hint="อีเมล"
+        android:layout_centerInParent="true"
+
+        android:layout_marginTop="40dp"
+        app:boxCornerRadiusBottomEnd="31.5dp"
+        app:boxCornerRadiusBottomStart="31.5dp"
+        app:boxCornerRadiusTopEnd="31.5dp"
+        app:boxCornerRadiusTopStart="31.5dp"
+        app:boxStrokeWidth="0dp"
+        app:boxBackgroundColor="#F5F4F2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtEmail"
+            android:fontFamily="@font/kanit_medium"
+            android:textFontWeight="400"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputPassword"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        style="@style/vanticInput"
+        android:hint="รหัสผ่าน"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/inputEmail"
+        android:layout_marginTop="40dp"
+        app:boxCornerRadiusBottomEnd="31.5dp"
+        app:boxCornerRadiusBottomStart="31.5dp"
+        app:boxCornerRadiusTopEnd="31.5dp"
+        app:boxCornerRadiusTopStart="31.5dp"
+        app:boxStrokeWidth="0dp"
+        app:boxBackgroundColor="#F5F4F2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtPassword"
+            android:fontFamily="@font/kanit_medium"
+            android:textFontWeight="400"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputPassword"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bottom_bc"
+        android:backgroundTint="#241C1C"
+        android:fontFamily="@font/kanit_medium"
+        android:padding="10dp"
+        android:text="เข้าสู่ระบบ"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="20sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRegister"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bottom_bc"
+        android:backgroundTint="#3AB4F2"
+        android:fontFamily="@font/kanit_medium"
+        android:padding="10dp"
+        android:text="ลงทะเบียน"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="20sp" />
+</RelativeLayout>
