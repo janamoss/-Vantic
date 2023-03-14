@@ -63,6 +63,7 @@ class BookingHistoryActivity : AppCompatActivity() {
 
     fun callhistoryuser() {
         bookinghistorylist.clear()
+        session = SessionManager(applicationContext)
         val email: String? = session.pref.getString(SessionManager.KEY_EMAIL, null)
         serv.bookinghistory(email.toString()).enqueue(object : Callback<List<Historybooking>> {
             override fun onResponse(call: Call<List<Historybooking>>, response: Response<List<Historybooking>>) {

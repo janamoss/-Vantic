@@ -171,7 +171,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            app:menu="@menu/bottom_menuadmin" />
+            app:menu="@menu/bottom_menu" />
     </RelativeLayout>
 
 </LinearLayout>

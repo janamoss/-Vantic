@@ -180,6 +180,11 @@ class AddTimeStationActivity : AppCompatActivity() {
     }
 
     fun insertaddtimestation() {
+        if (start == null || end == null || bindingaddTimeStation.btnDateselect.text.toString().isEmpty() || bindingaddTimeStation.btnTime1.text.toString().isEmpty()
+            || bindingaddTimeStation.btnTime2.text.toString().isEmpty() || bindingaddTimeStation.addPrice.text.toString().toInt() == null || van.toInt() == null ) {
+            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
+                Toast.LENGTH_SHORT).show()
+        }
         var statusid = 1
         val api:VanticAPI= Retrofit.Builder()
             .baseUrl("http://10.0.2.2:3000/")

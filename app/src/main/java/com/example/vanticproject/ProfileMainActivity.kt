@@ -45,7 +45,7 @@ class ProfileMainActivity : AppCompatActivity() {
         val lname: String? = session.pref.getString(SessionManager.KEY_LNAME, null)
         val email: String? = session.pref.getString(SessionManager.KEY_EMAIL, null)
         val phone: String? = session.pref.getString(SessionManager.KEY_PHONE, null)
-        val password: String? = session.pref.getString(SessionManager.KEY_PHONE, null)
+        val password: String? = session.pref.getString(SessionManager.KEY_PASSWORD, null)
         val hiddenPassword = password?.toCharArray()?.map { '*' }?.joinToString("")
 
         bindingPro.txtEmail.text = email

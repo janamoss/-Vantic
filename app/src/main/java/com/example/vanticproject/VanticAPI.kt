@@ -100,6 +100,16 @@ interface VanticAPI {
     ): Call<Van>
 
     @FormUrlEncoded
+    @PUT("uservantic/update/{email}")
+    fun updateuser(
+        @Path("email") email: String,
+        @Field("password") password: String,
+        @Field("fname") fname: String,
+        @Field("lname") lname: String,
+        @Field("phone") phone: String
+    ): Call<User>
+
+    @FormUrlEncoded
     @PUT("timetable/update/{timetable}")
     fun updatetimetable(
         @Path("timetable") timetable: Int,

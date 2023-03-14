@@ -58,6 +58,40 @@ class HistoryAdapter(val historylist: ArrayList<Historybooking>, val context: Co
                     }
                 })
             }
+
+            binding.btnCanceled.setOnClickListener {
+                val builder = AlertDialog.Builder(itemView.context)
+                builder.setTitle("การแจ้งเตือนการลบรายการ")
+                builder.setMessage("คุณต้องการที่จะลบรายการนี้ ใช่หรือไม่")
+                builder.setPositiveButton("ใช่") { dialog, which ->
+                    val position = adapterPosition
+                    val bookingid = historylist[position].bookingid
+                    createClient.deletebooking(bookingid).enqueue(object : Callback<booking> {
+                        override fun onResponse(call: Call<booking>, response: Response<booking>) {
+                            if (response.isSuccessful) {
+                                Toast.makeText(
+                                    context, "ลบรายการนี้สำเร็จ",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                                historylist.removeAt(position)
+                                notifyDataSetChanged()
+                            }
+                        }
+                        override fun onFailure(call: Call<booking>, t: Throwable) {
+                            Toast.makeText(
+                                context, "ลบไม่สำเร็จกรุณาลองใหม่",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    })
+                }
+                builder.setNegativeButton("ไม่") { dialog, which ->
+                    dialog.dismiss()
+                }
+                val dialog = builder.create()
+                dialog.show()
+            }
+
             }
         }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -96,6 +130,12 @@ class HistoryAdapter(val historylist: ArrayList<Historybooking>, val context: Co
             Color.parseColor("#7C7979")
         }
         binding.statusCar.setTextColor(color)
+
+        if (historylist!![position].namestatus == "รถออกเดินทางเรียบร้อยแล้ว") {
+            binding.btnCanceled.visibility = View.GONE
+        } else {
+            binding.btnCanceled.visibility = View.VISIBLE
+        }
     }
 
     override fun getItemCount(): Int {
