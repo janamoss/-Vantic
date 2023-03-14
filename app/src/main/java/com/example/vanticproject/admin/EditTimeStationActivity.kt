@@ -213,6 +213,14 @@ class EditTimeStationActivity : AppCompatActivity() {
     }
 
     private fun updatetimetable() {
+
+        if (binding.btnDateselect.text.toString().isEmpty() || binding.btnTime1.text.toString().isEmpty()
+            || binding.btnTime2.text.toString().isEmpty() || binding.editPrice.text.toString().isEmpty()
+        ) {
+            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
+                Toast.LENGTH_SHORT).show()
+        }
+
         var statusid = 0
         var data = intent
         var id = data.getIntExtra("id",0)
@@ -248,5 +256,7 @@ class EditTimeStationActivity : AppCompatActivity() {
                         t.message, Toast.LENGTH_LONG).show()
             }
         })
+
+
     }
 }

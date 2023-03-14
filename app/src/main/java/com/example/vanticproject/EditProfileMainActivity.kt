@@ -67,6 +67,13 @@ class EditProfileMainActivity : AppCompatActivity() {
     }
 
     private fun updateuser() {
+
+        if (bindingProfile.txtEmail.text.toString().isEmpty() || bindingProfile.txtPassword.text.toString().isEmpty()
+            || bindingProfile.txtFName.text.toString().isEmpty() || bindingProfile.txtLName.text.toString().isEmpty()
+            || bindingProfile.txtPhone.text.toString().isEmpty() ) {
+            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
+                Toast.LENGTH_SHORT).show()
+        }
         serv.updateuser(bindingProfile.txtEmail.text.toString(),
             bindingProfile.txtPassword.text.toString(),
             bindingProfile.txtFName.text.toString(),

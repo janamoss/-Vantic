@@ -69,6 +69,8 @@ class EditBookingAdminActivity : AppCompatActivity() {
         binding.btnDelete.setOnClickListener {
             deletebooking()
         }
+
+
         val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
         setSupportActionBar(toolbar)
 
@@ -136,6 +138,16 @@ class EditBookingAdminActivity : AppCompatActivity() {
         )
     }
     private fun updatebook() {
+
+        if (binding.txtId.text.toString().isEmpty() || binding.txtUser.text.toString().isEmpty()
+            || binding.driver.text.toString().isEmpty() || binding.txtFrom.text.toString().isEmpty()
+            || binding.txtvanid.text.toString().isEmpty()  || binding.txtdeparturetime.text.toString().isEmpty()
+            || binding.txtarrivetime.text.toString().isEmpty() || binding.txtAmount.text.toString().isEmpty()
+            || binding.txtPrice.text.toString().isEmpty()) {
+            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
+                Toast.LENGTH_SHORT).show()
+        }
+
         var data = intent
         var id = data.getIntExtra("id",0)
         serv.updatebooking(
@@ -164,6 +176,8 @@ class EditBookingAdminActivity : AppCompatActivity() {
                 ).show()
             }
         })
+
+
     }
 
     private fun deletebooking() {

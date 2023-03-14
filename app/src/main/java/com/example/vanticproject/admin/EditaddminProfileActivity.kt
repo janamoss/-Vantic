@@ -68,10 +68,16 @@ class EditaddminProfileActivity : AppCompatActivity() {
     }
 
     private fun updateuseradmin() {
-        if (bindingEditaddpro.txtEmail.text.toString().isEmpty() || bindingEditaddpro.txtPassword.text.toString().isEmpty()) {
+
+
+        if (bindingEditaddpro.txtEmail.text.toString().isEmpty() || bindingEditaddpro.txtPassword.text.toString().isEmpty()
+            || bindingEditaddpro.txtFName.text.toString().isEmpty() || bindingEditaddpro.txtLName.text.toString().isEmpty()
+            || bindingEditaddpro.txtPhone.text.toString().isEmpty() ) {
             Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
                 Toast.LENGTH_SHORT).show()
         }
+
+
         serv.updateuser(bindingEditaddpro.txtEmail.text.toString(),
             bindingEditaddpro.txtPassword.text.toString(),
             bindingEditaddpro.txtFName.text.toString(),

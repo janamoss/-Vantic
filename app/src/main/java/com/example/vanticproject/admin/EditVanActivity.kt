@@ -84,6 +84,13 @@ class EditVanActivity : AppCompatActivity() {
     }
 
     private fun updatevan() {
+
+        if (binding.txtVan.text.toString().isEmpty() || binding.txtVannum.text.toString().isEmpty()
+            || binding.editTextName.text.toString().isEmpty()) {
+            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
+                Toast.LENGTH_SHORT).show()
+        }
+
         var data = intent
         var id = data.getIntExtra("id",0)
         var registration_number = data.getStringExtra("registration_number").toString()
@@ -109,5 +116,7 @@ class EditVanActivity : AppCompatActivity() {
                         t.message, Toast.LENGTH_LONG).show()
             }
         })
+
+
     }
 }
