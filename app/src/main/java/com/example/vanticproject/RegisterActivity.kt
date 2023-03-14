@@ -20,11 +20,6 @@ class RegisterActivity : AppCompatActivity() {
         bindingRegister = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(bindingRegister.root)
 
-        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
-        setSupportActionBar(toolbar)
-
-        val btnBack = findViewById<ImageButton>(R.id.btn_back)
-        btnBack.setOnClickListener { onBackPressed() }
 
         bindingRegister.btnSubmitRegister.setOnClickListener{
             insertUser()

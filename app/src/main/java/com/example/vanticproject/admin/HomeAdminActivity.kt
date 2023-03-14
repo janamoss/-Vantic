@@ -46,11 +46,9 @@ class HomeAdminActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, BookingAdminActivity::class.java)
             startActivity(intent)
         }
-        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
-        setSupportActionBar(toolbar)
 
-        val btnBack = findViewById<ImageButton>(R.id.btn_back)
-        btnBack.setOnClickListener { onBackPressed() }
+
+
 
 
         bindingHomeA.bottomnavigation.setOnItemSelectedListener{
