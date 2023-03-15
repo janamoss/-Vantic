@@ -36,6 +36,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:text="จองตั๋วสำเร็จ"
+        android:fontFamily="@font/kanit_medium"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="normal" />
@@ -63,28 +64,31 @@
             android:orientation="vertical">
 
             <TextView
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="name text"
+                android:text="ชื่อ"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/mail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="email text"
+                android:text="อีเมล"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/tel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="tel text"
+                android:text="เบอร์"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -94,6 +98,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:fontFamily="@font/kanit_light"
                     android:id="@+id/vannum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,6 +108,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:fontFamily="@font/kanit_light"
                     android:id="@+id/vanregister"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,42 +120,47 @@
             </LinearLayout>
 
             <TextView
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="start: text"
+                android:text="จาก"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="end: text"
+                android:text="ไป"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="price text"
+                android:text="ราคา"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/seat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="seat: text"
+                android:text="จำนวนที่นั่ง"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -164,6 +175,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:fontFamily="@font/kanit_light"
                     android:id="@+id/passenger"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -173,6 +185,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:fontFamily="@font/kanit_light"
                     android:id="@+id/qty"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -200,6 +213,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="5dp"
                     android:text="฿ price"
+                    android:fontFamily="@font/kanit_light"
+
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -211,6 +226,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginTop="5dp"
                     android:text="ราคารวม"
+                    android:fontFamily="@font/kanit_light"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -222,6 +238,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="5dp"
                     android:text="฿ pricesum"
+                    android:fontFamily="@font/kanit_light"
+
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </RelativeLayout>
@@ -241,6 +259,8 @@
         android:background="@drawable/buttonback"
         android:padding="1dp"
         android:text="กลับหน้าหลัก"
+        android:fontFamily="@font/kanit_light"
+
         android:textColor="@color/white"
         android:textSize="13sp" />
     </RelativeLayout>

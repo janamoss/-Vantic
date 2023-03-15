@@ -31,6 +31,7 @@
         android:layout_marginTop="15dp">
 
         <TextView
+            android:fontFamily="@font/kanit_medium"
             android:id="@+id/pfName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,11 +52,12 @@
                 android:paddingLeft="20dp"
                 android:layout_marginTop="40dp" />
             <EditText
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:hint="Email"
+                android:hint="อีเมล"
                 android:textSize="20sp"
                 android:layout_toRightOf="@id/icEmail"
                 android:layout_marginTop="45dp"
@@ -76,10 +78,11 @@
                 android:layout_marginTop="40dp"
                 android:layout_below="@id/icEmail"/>
             <EditText
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/txtFName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Name"
+                android:hint="ชื่อ"
                 android:inputType="text"
                 android:textSize="20sp"
                 android:layout_toRightOf="@id/icAcc"
@@ -102,10 +105,11 @@
                 android:layout_marginTop="40dp"
                 android:layout_below="@id/icAcc"/>
             <EditText
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/txtLName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Name"
+                android:hint="นามสกุล"
                 android:inputType="text"
                 android:textSize="20sp"
                 android:layout_toRightOf="@id/icLna"
@@ -128,10 +132,11 @@
                 android:layout_marginTop="40dp"
                 android:layout_below="@id/icLna"/>
             <EditText
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/txtPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone Numeber"
+                android:hint="หมายเลขโทรศัพท์"
                 android:inputType="text"
                 android:textSize="20sp"
                 android:layout_toRightOf="@id/icCall"
@@ -154,10 +159,11 @@
                 android:layout_marginTop="40dp"
                 android:layout_below="@id/icCall"/>
             <EditText
+                android:fontFamily="@font/kanit_light"
                 android:id="@+id/txtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="รหัสผ่าน"
                 android:inputType="text"
                 android:textSize="20sp"
                 android:layout_toRightOf="@id/icEye"

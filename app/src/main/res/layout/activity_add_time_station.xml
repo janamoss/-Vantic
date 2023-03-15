@@ -47,7 +47,7 @@
                     android:id="@+id/txt_head"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="เพิ่มข้อมูลรถตู้"
+                    android:text="เพิ่มข้อมูลเที่ยวรถ"
                     android:textSize="30sp"
                     android:layout_gravity="center"
                     android:textColor="@color/black"

@@ -30,6 +30,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="50dp">
     <TextView
+        android:fontFamily="@font/kanit_light"
         android:id="@+id/titlecontact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,6 +53,8 @@
             android:layout_height="20dp"
             android:src="@drawable/marker" />
         <TextView
+            android:fontFamily="@font/kanit_light"
+
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,6 +71,7 @@
             android:layout_below="@+id/icmarker"
             android:src="@drawable/envelope" />
         <TextView
+            android:fontFamily="@font/kanit_light"
             android:id="@+id/mailtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,6 +90,8 @@
             android:layout_below="@+id/icenvalope"
             android:src="@drawable/phonecall" />
         <TextView
+            android:fontFamily="@font/kanit_light"
+
             android:id="@+id/telltext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,6 +110,7 @@
             android:layout_below="@+id/ictell"
             android:src="@drawable/facebook" />
         <TextView
+            android:fontFamily="@font/kanit_light"
             android:id="@+id/fbtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -122,6 +129,7 @@
             android:layout_below="@+id/icfacebook"
             android:src="@drawable/instagram" />
         <TextView
+            android:fontFamily="@font/kanit_light"
             android:id="@+id/igtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -50,7 +50,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20sp"
                     android:fontFamily="@font/kanit_light"
-                    android:text="แก้ไขข้อมูลรถตู้"
+                    android:text="แก้ไขข้อมูลเที่ยวรถ"
                     android:textColor="@color/black"
                     android:textSize="30sp" />
 

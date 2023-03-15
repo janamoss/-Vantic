@@ -25,6 +25,7 @@
             android:src="@drawable/ic_back" />
     </androidx.appcompat.widget.Toolbar>
     <TextView
+        android:fontFamily="@font/kanit_medium"
         android:id="@+id/pfName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,10 +46,11 @@
             android:paddingLeft="20dp"
             android:layout_marginTop="40dp" />
         <TextView
+            android:fontFamily="@font/kanit_light"
             android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="อีเมล"
             android:textSize="20sp"
             android:layout_toRightOf="@id/icEmail"
             android:layout_marginTop="45dp"
@@ -68,10 +70,11 @@
             android:layout_marginTop="40dp"
             android:layout_below="@id/icEmail"/>
         <TextView
+            android:fontFamily="@font/kanit_light"
             android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="ชื่อ"
             android:textSize="20sp"
             android:layout_toRightOf="@id/icAcc"
             android:layout_marginTop="45dp"
@@ -92,10 +95,11 @@
             android:layout_marginTop="40dp"
             android:layout_below="@id/icAcc"/>
         <TextView
+            android:fontFamily="@font/kanit_light"
             android:id="@+id/txtPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone Numeber"
+            android:text="หมายเลขโทรศัพท์"
             android:textSize="20sp"
             android:layout_toRightOf="@id/icCall"
             android:layout_marginTop="45dp"
@@ -116,10 +120,11 @@
             android:layout_marginTop="40dp"
             android:layout_below="@id/icCall"/>
         <TextView
+            android:fontFamily="@font/kanit_light"
             android:id="@+id/txtPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:text="รหัสผ่าน"
             android:textSize="20sp"
             android:layout_toRightOf="@id/icEye"
             android:layout_marginTop="45dp"
