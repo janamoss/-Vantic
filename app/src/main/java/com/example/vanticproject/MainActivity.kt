@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             || binding.edtPassword.text.toString().isEmpty()) {
             Toast.makeText(applicationContext,"กรุณากรอกข้อมูลก่อนเข้าสู่ระบบ",
                 Toast.LENGTH_SHORT).show()
+            return
         }
         val api:VanticAPI= Retrofit.Builder()
             .baseUrl("http://10.0.2.2:3000/")

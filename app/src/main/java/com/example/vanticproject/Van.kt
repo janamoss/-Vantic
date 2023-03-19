@@ -12,9 +12,6 @@ data class Van(
     @SerializedName("registration_number") val  registration_number: String,
 
     @Expose
-    @SerializedName("seats") val  seats: Int,
-
-    @Expose
     @SerializedName("driver") val  driver: String
 
 ) {}

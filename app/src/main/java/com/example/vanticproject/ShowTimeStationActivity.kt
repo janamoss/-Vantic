@@ -91,12 +91,12 @@ class ShowTimeStationActivity : AppCompatActivity() {
         var dates = data.getStringExtra("date_time")
         var seats = intent.getIntExtra("seats",0)
         timestationlist.clear();
-
         if (starstationid.toString().isEmpty() || endstationid.toString().isEmpty()
             || dates.toString().isEmpty() || seats.toString().isEmpty()
              ) {
             Toast.makeText(applicationContext,"กรุณากรอกข้อมูลให้ครบถ้วนเพื่อค้นหาเที่ยวรถ",
                 Toast.LENGTH_SHORT).show()
+            return
         }
 
         val serv : VanticAPI = Retrofit.Builder()

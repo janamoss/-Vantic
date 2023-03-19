@@ -31,6 +31,7 @@ class EditTimeStationActivity : AppCompatActivity() {
     var start : Int = 0
     var end : Int = 0
     var van : String = ""
+    var seat : String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditTimeStationBinding.inflate(layoutInflater)
@@ -40,6 +41,7 @@ class EditTimeStationActivity : AppCompatActivity() {
         showDropdownstart()
         showDropdownend()
         showDropdownvan()
+        showDropdown()
 
         var data = intent
         var dates = data.getStringExtra("date").toString()
@@ -144,7 +146,6 @@ class EditTimeStationActivity : AppCompatActivity() {
             onSuccess = { station ->
                 var data = intent
                 var startname = data.getStringExtra("startname").toString()
-
                 val stationNames = station.map { it.name }.toTypedArray()
                 val adapter = ArrayAdapter(this, R.layout.dropdown_seatvan, stationNames)
                 binding.dropdownEdit1.setText(startname)
@@ -212,15 +213,18 @@ class EditTimeStationActivity : AppCompatActivity() {
         newDateFragment.show(supportFragmentManager, "Date Picker")
     }
 
-    private fun updatetimetable() {
-
-        if (binding.btnDateselect.text.toString().isEmpty() || binding.btnTime1.text.toString().isEmpty()
-            || binding.btnTime2.text.toString().isEmpty() || binding.editPrice.text.toString().isEmpty()
-        ) {
-            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
-                Toast.LENGTH_SHORT).show()
+    private fun showDropdown () {
+        var data = intent
+        var seats = data.getIntExtra("seat",0)
+        val sub = resources.getStringArray (R.array.VanSeat_array)
+        val arrayAdapter = ArrayAdapter(this , R.layout.dropdown_seatvan , sub)
+        binding.dropdownVanseats.setText(seats.toString())
+        binding.dropdownVanseats.setAdapter(arrayAdapter)
+        binding.dropdownVanseats.setOnItemClickListener { parent, _, position, _ ->
+            seat = parent.getItemAtPosition(position) as String
         }
-
+    }
+    private fun updatetimetable() {
         var statusid = 0
         var data = intent
         var id = data.getIntExtra("id",0)
@@ -229,6 +233,14 @@ class EditTimeStationActivity : AppCompatActivity() {
             statusid = 1
         } else {
             statusid = 2
+        }
+        if (seat.toInt().equals(null) || id.equals(null) || start.equals(null) || end.equals(null) || binding.btnTime2.text.toString().isEmpty() ||
+            binding.editPrice.text.toString().isEmpty() || binding.btnDateselect.text.toString().isEmpty() || binding.btnTime1.text.toString().isEmpty()
+            || statusid.equals(null) || van.toInt().equals(null)
+        ) {
+            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
+                Toast.LENGTH_SHORT).show()
+            return
         }
         serv.updatetimetable(
             id,
@@ -239,6 +251,7 @@ class EditTimeStationActivity : AppCompatActivity() {
             binding.btnTime2.text.toString(),
             binding.editPrice.text.toString().toInt(),
             van.toInt(),
+            seat.toInt(),
             statusid
         ).enqueue(object : Callback<timestationshow> {
             override fun onResponse(call: Call<timestationshow>,

@@ -19,12 +19,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class AddVanActivity : AppCompatActivity() {
     private lateinit var bindingaddvan: ActivityAddVanBinding
-    var seat: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingaddvan = ActivityAddVanBinding.inflate(layoutInflater)
         setContentView(bindingaddvan.root)
-        showDropdown()
 
         bindingaddvan.btnDone3.setOnClickListener {
             insertvan()
@@ -57,26 +56,19 @@ class AddVanActivity : AppCompatActivity() {
             true
         }
     }
-    private fun showDropdown () {
-        bindingaddvan.dropdownAdd1.setText("กรุณาเลือกที่นั่ง")
-        val sub = resources.getStringArray (R.array.VanSeat_array)
-        val arrayAdapter = ArrayAdapter(this , R.layout.dropdown_seatvan , sub)
-        bindingaddvan.dropdownAdd1.setAdapter(arrayAdapter)
-        bindingaddvan.dropdownAdd1.setOnItemClickListener { parent, _, position, _ ->
-            seat = parent.getItemAtPosition(position) as String
-        }
-    }
+
     private fun insertvan() {
-        if(seat == null || bindingaddvan.addTextName.text.toString().isEmpty() || bindingaddvan.addTextCar.text.toString().isEmpty() ) {
+        if(bindingaddvan.addTextName.text.toString().isEmpty() || bindingaddvan.addTextCar.text.toString().isEmpty() ) {
             Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
                 Toast.LENGTH_SHORT).show()
+            return
         }
         val api:VanticAPI= Retrofit.Builder()
             .baseUrl("http://10.0.2.2:3000/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(VanticAPI::class.java)
-        api.addvanlist(bindingaddvan.addTextCar.text.toString(),seat.toInt(),bindingaddvan.addTextName.text.toString())
+        api.addvanlist(bindingaddvan.addTextCar.text.toString(),bindingaddvan.addTextName.text.toString())
             .enqueue(object : Callback<Van> {
             override fun onResponse(call: Call<Van>,
                                     response: retrofit2.Response<Van>)

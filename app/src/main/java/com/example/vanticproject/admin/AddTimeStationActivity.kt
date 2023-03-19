@@ -26,6 +26,7 @@ class AddTimeStationActivity : AppCompatActivity() {
     var start : Int = 0
     var end : Int = 0
     var van : String = ""
+    var seat : String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingaddTimeStation = ActivityAddTimeStationBinding.inflate(layoutInflater)
@@ -57,6 +58,7 @@ class AddTimeStationActivity : AppCompatActivity() {
         showDropdownstart()
         showDropdownend()
         showDropdownvan()
+        showDropdown()
 
         bindingaddTimeStation.btnDone2.setOnClickListener {
             insertaddtimestation()
@@ -179,11 +181,22 @@ class AddTimeStationActivity : AppCompatActivity() {
         newDateFragment.show(supportFragmentManager, "Date Picker")
     }
 
+    private fun showDropdown () {
+        bindingaddTimeStation.dropdownVanseats.setText("กรุณาเลือกที่นั่ง")
+        val sub = resources.getStringArray (R.array.VanSeat_array)
+        val arrayAdapter = ArrayAdapter(this , R.layout.dropdown_seatvan , sub)
+        bindingaddTimeStation.dropdownVanseats.setAdapter(arrayAdapter)
+        bindingaddTimeStation.dropdownVanseats.setOnItemClickListener { parent, _, position, _ ->
+            seat = parent.getItemAtPosition(position) as String
+        }
+    }
+
     fun insertaddtimestation() {
-        if (start == null || end == null || bindingaddTimeStation.btnDateselect.text.toString().isEmpty() || bindingaddTimeStation.btnTime1.text.toString().isEmpty()
+        if (seat.toInt().equals(null) || start == null || end == null || bindingaddTimeStation.btnDateselect.text.toString().isEmpty() || bindingaddTimeStation.btnTime1.text.toString().isEmpty()
             || bindingaddTimeStation.btnTime2.text.toString().isEmpty() || bindingaddTimeStation.addPrice.text.toString().toInt() == null || van.toInt() == null ) {
             Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
                 Toast.LENGTH_SHORT).show()
+            return
         }
         var statusid = 1
         val api:VanticAPI= Retrofit.Builder()
@@ -198,6 +211,7 @@ class AddTimeStationActivity : AppCompatActivity() {
             bindingaddTimeStation.btnTime1.text.toString(),
             bindingaddTimeStation.btnTime2.text.toString(),
             bindingaddTimeStation.addPrice.text.toString().toInt(),
+            seat.toInt(),
             van.toInt(),
             statusid
         ).enqueue(object : Callback<timeandstation> {

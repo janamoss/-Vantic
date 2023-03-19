@@ -60,7 +60,6 @@ interface VanticAPI {
     @POST("addvan")
     fun addvanlist(
         @Field("registration_number") registration_number: String,
-        @Field("seats") seats: Int,
         @Field("driver") driver: String ): Call<Van>
 
     @FormUrlEncoded
@@ -80,6 +79,7 @@ interface VanticAPI {
         @Field("time_start") time_start: String,
         @Field("time_end") time_end: String,
         @Field("price") price : Int,
+        @Field("seats") seats: Int,
         @Field("vanid") vanid : Int,
         @Field("statustimeid") statustimeid : Int
     ): Call<timeandstation>
@@ -95,7 +95,6 @@ interface VanticAPI {
     fun updatevan(
         @Path("vanid") vanid: Int,
         @Field("registration_number") registration_number: String,
-        @Field("seats") seats: Int,
         @Field("driver") driver: String
     ): Call<Van>
 
@@ -120,6 +119,7 @@ interface VanticAPI {
         @Field("time_end") time_end: String,
         @Field("price") price : Int,
         @Field("vanid") vanid : Int,
+        @Field("seats") seats: Int,
         @Field("statustimeid") statustimeid : Int
     ): Call<timestationshow>
 

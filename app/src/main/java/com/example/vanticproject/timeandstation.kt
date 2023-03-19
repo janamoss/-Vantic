@@ -25,6 +25,9 @@ data class timeandstation(
     @SerializedName("price") val  price: Int,
 
     @Expose
+    @SerializedName("seats") val  seats: Int,
+
+    @Expose
     @SerializedName("vanid") val  vanid: Int,
 
     @Expose

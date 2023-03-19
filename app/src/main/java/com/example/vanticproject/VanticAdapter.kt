@@ -34,7 +34,6 @@ class VanticAdapter(val vanticvanlist: ArrayList<Van>, val context: Context):
                 val intent = Intent(contextView, EditVanActivity::class.java)
                 intent.putExtra("id",vanid)
                 intent.putExtra("registration_number",item.registration_number)
-                intent.putExtra("seat",item.seats)
                 intent.putExtra("driver",item.driver)
                 contextView.startActivity(intent)
             }
@@ -86,14 +85,6 @@ class VanticAdapter(val vanticvanlist: ArrayList<Van>, val context: Context):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var binding = holder.binding
 
-        val color = if (vanticvanlist!![position].seats == 0) {
-            binding.txtVanSeat.text = "ไม่มีที่นั่งว่าง"
-            Color.parseColor("#F23A3A")
-        } else {
-            binding.txtVanSeat.text = "เหลือที่นั่งอยู่ : " + vanticvanlist!![position].seats.toString()
-            Color.parseColor("#3AB4F2")
-        }
-        binding.txtVanSeat.setTextColor(color)
         binding.txtVanNumber.text = "รถคันที่ : " + vanticvanlist!![position].vanid.toString()
         binding.txtVanReg.text = "รถทะเบียน : " + vanticvanlist!![position].registration_number
         binding.txtVanDriver.text = "คนขับชื่อ : " + vanticvanlist!![position].driver

@@ -19,13 +19,11 @@ class EditVanActivity : AppCompatActivity() {
     private lateinit var binding : ActivityEditVanBinding
     lateinit var session: SessionManager
     var serv = VanticAPI.create()
-    var seat = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditVanBinding.inflate(layoutInflater)
         setContentView(binding.root)
         session = SessionManager(applicationContext)
-        showDropdown()
         var data = intent
         var seats = data.getIntExtra("seat",0)
         var id = data.getIntExtra("id",0)
@@ -71,34 +69,20 @@ class EditVanActivity : AppCompatActivity() {
 
     }
 
-    private fun showDropdown () {
-        var data = intent
-        var seats = data.getIntExtra("seat",0)
-        val sub = resources.getStringArray (R.array.VanSeat_array)
-        val arrayAdapter = ArrayAdapter(this , R.layout.dropdown_seatvan , sub)
-        binding.autoCompleteTextView4.setText(seats.toString())
-        binding.autoCompleteTextView4.setAdapter(arrayAdapter)
-        binding.autoCompleteTextView4.setOnItemClickListener { parent, _, position, _ ->
-            seat = parent.getItemAtPosition(position) as String
-        }
-    }
-
     private fun updatevan() {
-
-        if (binding.txtVan.text.toString().isEmpty() || binding.txtVannum.text.toString().isEmpty()
-            || binding.editTextName.text.toString().isEmpty()) {
-            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
-                Toast.LENGTH_SHORT).show()
-        }
-
         var data = intent
         var id = data.getIntExtra("id",0)
         var registration_number = data.getStringExtra("registration_number").toString()
         var driver = data.getStringExtra("driver").toString()
+        if (id == null || registration_number.isEmpty()
+            || driver.isEmpty()) {
+            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
+                Toast.LENGTH_SHORT).show()
+            return
+        }
         serv.updatevan(
             id,
             registration_number,
-            seat.toInt(),
             driver
         ).enqueue(object : Callback<Van> {
             override fun onResponse(call: Call<Van>,

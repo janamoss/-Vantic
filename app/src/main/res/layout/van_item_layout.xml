@@ -21,17 +21,6 @@
             android:textSize="20sp"
             android:padding="10dp"/>
         <TextView
-            android:id="@+id/txtVanSeat"
-            android:fontFamily="@font/kanit_medium"
-            android:textColor="#3AB4F2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="เหลือที่ว่าง"
-            android:textAlignment="textEnd"
-            android:padding="10dp"
-            android:textSize="20sp"
-            />
-        <TextView
             android:id="@+id/txtVanReg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

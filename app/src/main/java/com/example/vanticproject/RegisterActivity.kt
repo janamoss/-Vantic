@@ -37,12 +37,14 @@ class RegisterActivity : AppCompatActivity() {
             || bindingRegister.edtPasswordA.text.toString().isEmpty()) {
             Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
                 Toast.LENGTH_SHORT).show()
+            return
         }
         if(bindingRegister.edtPassword.text.toString().equals(bindingRegister.edtPasswordA.text.toString())) {
             password = bindingRegister.edtPassword.text.toString()
         } else {
             Toast.makeText(applicationContext,"รหัสผ่านไม่ตรงกัน กรุณากรอกใหม่อีกครั้ง.",
                 Toast.LENGTH_SHORT).show()
+            return
         }
         val api:VanticAPI= Retrofit.Builder()
             .baseUrl("http://10.0.2.2:3000/")

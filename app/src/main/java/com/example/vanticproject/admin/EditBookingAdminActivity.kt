@@ -139,17 +139,13 @@ class EditBookingAdminActivity : AppCompatActivity() {
     }
     private fun updatebook() {
 
-        if (binding.txtId.text.toString().isEmpty() || binding.txtUser.text.toString().isEmpty()
-            || binding.driver.text.toString().isEmpty() || binding.txtFrom.text.toString().isEmpty()
-            || binding.txtvanid.text.toString().isEmpty()  || binding.txtdeparturetime.text.toString().isEmpty()
-            || binding.txtarrivetime.text.toString().isEmpty() || binding.txtAmount.text.toString().isEmpty()
-            || binding.txtPrice.text.toString().isEmpty()) {
-            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
-                Toast.LENGTH_SHORT).show()
-        }
-
         var data = intent
         var id = data.getIntExtra("id",0)
+        if (statuss == null || id == null) {
+            Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
+                Toast.LENGTH_SHORT).show()
+            return
+        }
         serv.updatebooking(
             statuss,
             id,
@@ -157,21 +153,16 @@ class EditBookingAdminActivity : AppCompatActivity() {
             override fun onResponse(call: Call<booking>, response: Response<booking>) {
                 if (response.isSuccessful) {
                     Toast.makeText(
-                        applicationContext, "Seccessfully Updated",
+                        applicationContext, "อัพเดตข้อมูลสำเร็จ",
                         Toast.LENGTH_LONG
                     ).show()
                     finish()
-                } else {
-                    Toast.makeText(
-                        applicationContext, "Update Failure",
-                        Toast.LENGTH_LONG
-                    ).show()
                 }
             }
 
             override fun onFailure(call: Call<booking>, t: Throwable) {
                 Toast.makeText(
-                    applicationContext, "Update Failure",
+                    applicationContext, "อัพเดตข้อมูลไม่สำเร็จ",
                     Toast.LENGTH_LONG
                 ).show()
             }

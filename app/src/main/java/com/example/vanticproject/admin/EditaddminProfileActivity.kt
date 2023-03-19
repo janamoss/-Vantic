@@ -75,9 +75,8 @@ class EditaddminProfileActivity : AppCompatActivity() {
             || bindingEditaddpro.txtPhone.text.toString().isEmpty() ) {
             Toast.makeText(applicationContext,"คุณกรอกข้อมูลไม่ครบ กรุณากรอกข้อมูลให้ครบถ้วน.",
                 Toast.LENGTH_SHORT).show()
+            return
         }
-
-
         serv.updateuser(bindingEditaddpro.txtEmail.text.toString(),
             bindingEditaddpro.txtPassword.text.toString(),
             bindingEditaddpro.txtFName.text.toString(),

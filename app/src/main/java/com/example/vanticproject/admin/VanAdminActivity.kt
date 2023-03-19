@@ -79,7 +79,7 @@ class VanAdminActivity : AppCompatActivity() {
             .enqueue(object : Callback<List<Van>> {
                 override fun onResponse(call: Call<List<Van>>, response: Response<List<Van>>) {
                     response.body()?.forEach {
-                        vanticvanlist.add(Van(it.vanid, it.registration_number,it.seats,it.driver))
+                        vanticvanlist.add(Van(it.vanid, it.registration_number,it.driver))
                     }
                     //// Set Data to RecyclerRecyclerView
                     bindingvan.recyclerview.adapter = VanticAdapter(vanticvanlist,applicationContext)
