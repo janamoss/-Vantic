@@ -61,8 +61,8 @@ class HistoryAdapter(val historylist: ArrayList<Historybooking>, val context: Co
 
             binding.btnCanceled.setOnClickListener {
                 val builder = AlertDialog.Builder(itemView.context)
-                builder.setTitle("การแจ้งเตือนการลบรายการ")
-                builder.setMessage("คุณต้องการที่จะลบรายการนี้ ใช่หรือไม่")
+                builder.setTitle("การแจ้งเตือนการยกเลิกรายการ")
+                builder.setMessage("คุณต้องการที่จะยกเลิกรายการนี้ ใช่หรือไม่")
                 builder.setPositiveButton("ใช่") { dialog, which ->
                     val position = adapterPosition
                     val bookingid = historylist[position].bookingid
@@ -70,7 +70,7 @@ class HistoryAdapter(val historylist: ArrayList<Historybooking>, val context: Co
                         override fun onResponse(call: Call<booking>, response: Response<booking>) {
                             if (response.isSuccessful) {
                                 Toast.makeText(
-                                    context, "ลบรายการนี้สำเร็จ",
+                                    context, "ยกเลิกรายการนี้สำเร็จ",
                                     Toast.LENGTH_LONG
                                 ).show()
                                 historylist.removeAt(position)
@@ -79,7 +79,7 @@ class HistoryAdapter(val historylist: ArrayList<Historybooking>, val context: Co
                         }
                         override fun onFailure(call: Call<booking>, t: Throwable) {
                             Toast.makeText(
-                                context, "ลบไม่สำเร็จกรุณาลองใหม่",
+                                context, "ยกเลิกไม่สำเร็จกรุณาลองใหม่",
                                 Toast.LENGTH_LONG
                             ).show()
                         }
